@@ -71,8 +71,17 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    @include('includes.menu')
+                </div>
+                <div class="col-md-10">
+                    @yield('content')
+                    </div>
+            </div>
+        </div>
 
-        @yield('content')
     </div>
 
     <!-- Scripts -->

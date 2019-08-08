@@ -19,6 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cursos', function () {
-    return view('course');
+Route::get('/cursos','HomeController@cursos');
+
+
+
+
+Route::group(['middleware'=>'admin', 'namespace'=>'Admin'],function(){
+    Route::get('/usuarios','UserController@index');
+    Route::get('/profesores','ProfessorController@index');
+    Route::get('/config','ConfigController@index');
 });
