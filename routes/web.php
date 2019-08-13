@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/cursos','HomeController@cursos');
+Route::get('/equipos','HomeController@equipos');
 
 
 

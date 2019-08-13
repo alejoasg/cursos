@@ -29,4 +29,8 @@ class HomeController extends Controller
     public function cursos() {
         return view('course');
     }
+
+    public function equipos() {
+        return view('device');
+    }
 }

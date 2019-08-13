@@ -25,7 +25,7 @@
                      </div>
 
                      <div class="form-group">
-                         <button class="btn btn-primary">Fecha Fin</button>
+                         <button class="btn btn-primary">Insertar</button>
 
                      </div>
                  </form>

@@ -18,6 +18,9 @@
     <li><a href="#">
             Profesores
         </a></li>
+    <li><a href="{{ url('/equipos') }}">
+            Equipo
+        </a></li>
     <li role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administración</a>
         <ul class="dropdown-menu">
