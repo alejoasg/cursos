@@ -10,13 +10,11 @@
                 <div class="form-group">
                     <label for="title"> Nombre Usuario</label>
                     <input type="text" name="title" class="form-control"></n>
-                </div>
-
+                </div> 
                 <div class="form-group">
                     <label for="title"> Apellido Usuario</label>
                     <input type="text" name="title" class="form-control"></n>
                 </div>
-
                 <div class="form-group">
                     <label for="title"> Nick Usuario</label>
                     <input type="text" name="title" class="form-control"></n>
@@ -29,7 +27,6 @@
                     <label for="title">Correo Electronico</label>
                     <input type="text" name="title" class="form-control"></n>
                 </div>
-
                 <div class="form-group">
                     <label for="title">DNI</label>
                     <input type="text" name="title" class="form-control"></n>
@@ -40,7 +37,6 @@
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary">Insertar</button>
-
                 </div>
             </form>
 
