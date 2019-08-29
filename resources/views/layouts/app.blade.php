@@ -42,6 +42,8 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+
+
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Loguearse</a></li>
@@ -67,6 +69,10 @@
                                 </ul>
                             </li>
                         @endguest
+
+
+
+
                     </ul>
                 </div>
             </div>
