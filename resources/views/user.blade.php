@@ -10,7 +10,7 @@
                 <div class="form-group">
                     <label for="title"> Nombre Usuario</label>
                     <input type="text" name="title" class="form-control"></n>
-                </div> 
+                </div>
                 <div class="form-group">
                     <label for="title"> Apellido Usuario</label>
                     <input type="text" name="title" class="form-control"></n>
