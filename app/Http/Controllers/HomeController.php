@@ -30,6 +30,12 @@ class HomeController extends Controller
         return view('course');
     }
 
+    public function alumnos() {
+
+        $lists = array(['name'=>"Lachy",'verdadero'=>"Es alumno"],['name'=>"segundo",'verdadero'=>"No es alumno"]);
+        return view('student')->with(compact('lists'));
+    }
+
     public function equipos() {
         return view('device');
     }
