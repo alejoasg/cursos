@@ -26,7 +26,7 @@ Route::get('/alumnos','HomeController@alumnos');
 
 
 
-Route::group(['middleware'=>'admin', 'namespace'=>'Admin'],function(){
+Route::group(['middleware'=>'auth', 'namespace'=>'Admin'],function(){
     Route::get('/usuarios','UserController@index');
     Route::get('/profesores','ProfessorController@index');
     Route::get('/config','ConfigController@index');

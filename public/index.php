@@ -55,6 +55,10 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+//$response = $kernel->handle(
+//    $request = App\Custom\Http\Request::capture()
+//);
+
 $response->send();
 
 $kernel->terminate($request, $response);
