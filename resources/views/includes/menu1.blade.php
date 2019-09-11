@@ -29,7 +29,7 @@
                         </li>
                         <li><a href="{{ url('/usuarios') }}" data-i18n="nav.gallery_pages.gallery_grid" class="menu-item">Usuarios</a>
                         </li>
-                        <li><a href="#" data-i18n="nav.search_pages.search_page" class="menu-item">Profesores</a>
+                        <li><a href="{{ url('/profesores') }}" data-i18n="nav.search_pages.search_page" class="menu-item">Profesores</a>
                         </li>
                         <li><a href="{{ url('/equipos') }}" data-i18n="nav.dash.main" class="menu-item">Medios de Apoyo</a>
                         </li>

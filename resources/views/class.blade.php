@@ -8,7 +8,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title" id="basic-layout-form-center">EQUIPO</h4>
+                            <h4 class="card-title" id="basic-layout-form-center">Aula</h4>
                             <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -23,7 +23,7 @@
                             <div class="card-block">
 
                                 <div class="card-text">
-                                    <p>Se adicionan los equipos del sistema.</p>
+                                    <p>Se adicionan las aulas de la Entidad.</p>
                                 </div>
 
                                 <form class="form">
@@ -31,13 +31,13 @@
                                         <div class="col-md-6 offset-md-3">
                                             <div class="form-body">
                                                 <div class="form-group">
-                                                    <label for="eventInput1">Nombre Equipo</label>
-                                                    <input type="text" id="eventInput1" class="form-control" placeholder="nombre usuario" name="nombre">
+                                                    <label for="eventInput1">Número Aula</label>
+                                                    <input type="number" id="eventInput1" class="form-control" placeholder="número aula" name="numeroaula">
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="eventInput1">Modelo Equipo</label>
-                                                    <input type="text" id="eventInput2" class="form-control" placeholder="apellido usuario" name="apellido">
+                                                    <label for="eventInput1">Lugar Aula</label>
+                                                    <input type="text" id="eventInput2" class="form-control" placeholder="Lugar del aula" name="lugar">
                                                 </div>
                                             </div>
                                         </div>
