@@ -27,7 +27,8 @@
                                     <p>Se adicionan los cursos que se daran durante todo el año.</p>
                                 </div>
 
-                                <form class="form">
+                                <form class="form" method="POST">
+                                     {{csrf_field()}}
                                     <div class="row">
                                         <div class="col-md-6 offset-md-3">
                                             <div class="form-body">

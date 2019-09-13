@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Providers\Courses;
 class HomeController extends Controller
 {
     /**
@@ -42,5 +42,9 @@ class HomeController extends Controller
 
     public function aulas() {
         return view('class');
+    }
+
+    public function postcursos(Request $request) {
+        return dd($request->all());
     }
 }
