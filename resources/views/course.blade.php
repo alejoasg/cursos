@@ -34,21 +34,25 @@
                                             <div class="form-body">
                                                 <div class="form-group">
                                                     <label for="eventInput1"> Nombre Curso</label>
-                                                    <input type="text" id="eventInput1" class="form-control" placeholder="nombre curso" name="nombre">
+                                                    <input type="text" id="eventInput1" class="form-control" placeholder="nombre curso" name="nombre" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="eventInput1"> Descripción del Curso</label>
+                                                    <input type="text" id="eventInput2" class="form-control" placeholder="descripción del curso" name="description" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="eventInput2">Cantidad de Horas</label>
-                                                    <input type="number" id="eventInput2" class="form-control" placeholder="cantidad de horas" name="cantidad de horas">
+                                                    <input type="number" id="eventInput3" class="form-control" placeholder="cantidad de horas" name="cant_horas" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="eventInput3">Fecha Inicio</label>
-                                                    <input type="date" id="eventInput3" class="form-control" placeholder="fecha inicio" name="fecha_inicio">
+                                                    <input type="date" id="eventInput4" class="form-control" placeholder="fecha inicio" name="fecha_inicio" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="eventInput3">Fecha Final</label>
-                                                    <input type="date" id="eventInput3" class="form-control" placeholder="fecha final" name="fecha_final">
+                                                    <input type="date" id="eventInput5" class="form-control" placeholder="fecha final" name="fecha_final" required>
                                                 </div>
 
                                                <!--- <div class="form-group">

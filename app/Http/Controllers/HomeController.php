@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Providers\Courses;
+use App\Courses;
 class HomeController extends Controller
 {
     /**
@@ -45,6 +45,17 @@ class HomeController extends Controller
     }
 
     public function postcursos(Request $request) {
-        return dd($request->all());
+
+
+        $course= new Courses();
+        $course->name= $request->input('nombre');
+        $course->description= $request->input('description');
+        $course->course_hours= $request->input('cant_horas');
+        $course->start_date= $request->input('fecha_inicio');
+        $course->end_date= $request->input('fecha_final');
+        $course->save();
+
+        return back();
+       // return dd($request->all());
     }
 }

@@ -14,6 +14,7 @@ class CoursesTableSeeder extends Seeder
         $newDate = $newDate->format('d/m/Y');
         $endDate = DateTime::createFromFormat('Y-m-d', '2019-02-25');
         $endDate = $endDate->format('d/m/Y');
+
         Courses::create([
             'name'=> 'Marketing digital',
             'description'=>'solucion de marketing digital',
