@@ -23,9 +23,17 @@
                         <div class="card-body collapse in">
                             <div class="card-block">
 
-                                <div class="card-text">
-                                    <p>Se adicionan los cursos que se daran durante todo el año.</p>
-                                </div>
+                               @if (count($errors) > 0)
+                                   <div class="alert alert-danger">
+                                       <ul>
+                                           @foreach( $errors->all() as $error)
+                                               <li>
+                                                   {{$error}}
+                                               </li>
+                                               @endforeach
+                                       </ul>
+                                   </div>
+                                @endif
 
                                 <form class="form" method="POST">
                                      {{csrf_field()}}
@@ -34,25 +42,25 @@
                                             <div class="form-body">
                                                 <div class="form-group">
                                                     <label for="eventInput1"> Nombre Curso</label>
-                                                    <input type="text" id="eventInput1" class="form-control" placeholder="nombre curso" name="nombre" required>
+                                                    <input type="text" id="eventInput1" class="form-control" placeholder="nombre curso" name="nombre" value="{{old('nombre')}}" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="eventInput1"> Descripción del Curso</label>
-                                                    <input type="text" id="eventInput2" class="form-control" placeholder="descripción del curso" name="description" required>
+                                                    <textarea type="text" id="eventInput2" class="form-control" placeholder="descripción del curso" name="description" required>{{old('description')}}</textarea>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="eventInput2">Cantidad de Horas</label>
-                                                    <input type="number" id="eventInput3" class="form-control" placeholder="cantidad de horas" name="cant_horas" required>
+                                                    <input type="number" id="eventInput3" class="form-control" placeholder="cantidad de horas" name="cant_horas" value="{{old('cant_horas')}}" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="eventInput3">Fecha Inicio</label>
-                                                    <input type="date" id="eventInput4" class="form-control" placeholder="fecha inicio" name="fecha_inicio" required>
-                                                </div>
+                                                    <input type="date" id="eventInput4" class="form-control" placeholder="fecha inicio" name="fecha_inicio" value="{{old('fecha_inicio')}}" required>
+                                                 </div>
                                                 <div class="form-group">
                                                     <label for="eventInput3">Fecha Final</label>
-                                                    <input type="date" id="eventInput5" class="form-control" placeholder="fecha final" name="fecha_final" required>
+                                                    <input type="date" id="eventInput5" class="form-control" placeholder="fecha final" name="fecha_final" value="{{old('fecha_final')}}" required>
                                                 </div>
 
                                                <!--- <div class="form-group">

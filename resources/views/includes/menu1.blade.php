@@ -13,7 +13,9 @@
             <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
                 <li class=" nav-item"><a href="index.html"><i class="icon-home3"></i><span data-i18n="nav.dash.main" class="menu-title">Gestión</span></a>
                     <ul class="menu-content">
-                        <li><a href="{{ url('/cursos') }}" data-i18n="nav.dash.main" class="menu-item">Cursos</a>
+                        <li><a href="{{ url('/cursos') }}" data-i18n="nav.dash.main" class="menu-item">Nuevos Cursos</a>
+                        </li>
+                        <li><a href="{{ url('/listcursos') }}" data-i18n="nav.dash.main" class="menu-item">Lista de Cursos</a>
                         </li>
                         <li><a href="{{ url('/aulas') }}" data-i18n="nav.dash.main" class="menu-item">Aulas</a>
                         </li>
