@@ -28,9 +28,11 @@ Route::get('/aulas','HomeController@aulas');
 
 
 
-
 Route::group(['middleware'=>'auth', 'namespace'=>'Admin'],function(){
     Route::get('/usuarios','UserController@index');
+    Route::post('/usuarios','UserController@store');
+    Route::get('/editusuarios/{id}','UserController@edit')->name('editusuarios');
+    Route::post('/usuarios/{id}','UserController@update');
     Route::get('/profesores','ProfessorController@index');
     Route::get('/config','ConfigController@index');
 });
