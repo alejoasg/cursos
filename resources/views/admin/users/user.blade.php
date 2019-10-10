@@ -25,8 +25,19 @@
                                 <div class="card-text">
                                     <p>Se adicionan los usuarios del sistema.</p>
                                 </div>
-
-                                <form class="form">
+                                @if (count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach( $errors->all() as $error)
+                                                <li>
+                                                    {{$error}}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                <form class="form" method="POST">
+                                    {{csrf_field()}}
                                     <div class="row">
                                         <div class="col-md-6 offset-md-3">
                                             <div class="form-body">
@@ -43,11 +54,10 @@
                                                     <label for="nick">Nick Usuario</label>
                                                     <input type="text" id="eventInput3" class="form-control" placeholder="nick usuario" name="nick"  value="{{old('nick')}}">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="activo">Usuario Activo</label>
-                                                    <input type="checkbox" id="eventInput4" class="form-control" name="activo"  value="{{old('activo')}}">
-                                                </div>
-
+                                                {{--<div class="form-group">--}}
+                                                    {{--<label for="activo">Usuario Activo</label>--}}
+                                                    {{--<input type="checkbox" id="eventInput4" class="form-control" name="activo"  value="{{old('activo')}}">--}}
+                                                {{--</div>--}}
                                                 <div class="form-group">
                                                     <label for="email">Correo Electronico</label>
                                                     <input type="email" id="eventInput5" class="form-control" placeholder="correo electronico" name="correo"  value="{{old('correo')}}">
@@ -86,6 +96,10 @@
                                          <tr>
                                              <th>E-mail</th>
                                              <th>Nombre</th>
+                                             <th>Apellido</th>
+                                             <th>Nick</th>
+                                             <th>DNI</th>
+                                             <th>Número de teléfono</th>
                                              <th>Opciones</th>
                                          </tr>
                                         </thead>
@@ -94,6 +108,10 @@
                                         <tr>
                                             <td>{{$user['email']}}</td>
                                             <td> {{$user['name']}}</td>
+                                            <td> {{$user['last_name']}}</td>
+                                            <td> {{$user['nick']}}</td>
+                                            <td> {{$user['dni']}}</td>
+                                            <td> {{$user['phone_number']}}</td>
                                             <td>
 
                                                 <a   href="{{route('editusuarios',$user['id'])}}"  class="btn btn-sm btn-primary" title="Editar">
