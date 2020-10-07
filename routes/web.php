@@ -25,6 +25,8 @@ Route::post('/cursos','HomeController@postcursos');
 Route::get('/equipos','HomeController@equipos');
 Route::get('/alumnos','HomeController@alumnos');
 Route::get('/aulas','HomeController@aulas');
+Route::get('/lottery','HomeController@lottery');
+Route::post('/lottery','HomeController@existe');
 
 
 
@@ -33,7 +35,7 @@ Route::group(['middleware'=>'auth', 'namespace'=>'Admin'],function(){
     Route::post('/usuarios','UserController@store');
     Route::get('/editusuarios/{id}','UserController@edit')->name('editusuarios');
     Route::post('/editusuarios/{id}','UserController@update')->name('editusuarios');
-    Route::get('/editusuarios/{id}/eliminar','UserController@delete')->name('editusuarios');
+    Route::get('/editusuarios/{id}/eliminar','UserController@delete')->name('deleteusuarios');
     Route::get('/profesores','ProfessorController@index');
     Route::get('/config','ConfigController@index');
 });

@@ -36,6 +36,9 @@
                         </li>
                         <li @if(request()->is('equipos')) class="active" @endif><a href="{{ url('/equipos') }}" data-i18n="nav.dash.main" class="menu-item">Medios de Apoyo</a>
                         </li>
+
+                        <li @if(request()->is('lottery')) class="active" @endif><a href="{{ url('/lottery') }}" data-i18n="nav.dash.main" class="menu-item">Gana millones</a>
+                        </li>
                     </ul>
                     <!-- Esta es la parte de datos de contacto para soporte-->
                 </li>

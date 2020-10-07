@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Courses;
+use App\Lottery;
 class HomeController extends Controller
 {
     /**
@@ -80,4 +81,168 @@ class HomeController extends Controller
         $lists = Courses::all();
         return view('listcourse')->with(compact('lists'));
     }
+
+
+    public function lottery() {
+
+        $numbers = lottery::all();
+        $ramdoms = self::millonarios();
+        return view('lottery')->with(compact('numbers','ramdoms'));
+
+    }
+
+    public function millonarios()
+   {
+
+       $ramdoms=array();
+
+       for( $i=0;$i<3;$i++)
+       {
+           do {
+               $numero1= mt_rand(1, 50);
+               $combito=array($numero1);
+
+               for ($a = 0; $a < 4; $a++) {
+                   $numero = mt_rand(1, 50);
+                   $cont=0;
+                   do {
+                       foreach ($combito as $combi) {
+                           if ($combi == $numero) {
+                               $cont++;
+                           }
+                       }
+                       $numero =($cont==0)?$numero:mt_rand(1, 50);
+                     }
+                     while($cont>0);
+
+                  $combito[]=$numero;
+               }
+               $estrella1= mt_rand(1, 12);
+               $estrellas=array($estrella1);
+               for ($a = 0; $a < 1; $a++) {
+                   $estrella = mt_rand(1, 12);
+                   $cont=0;
+                   do {
+                       foreach ($estrellas as $estri) {
+                           if ($estri == $estrella) {
+                               $cont++;
+                           }
+                       }
+                       $estrella =($cont==0)?$estrella:mt_rand(1,12);
+                   }
+                   while($cont>0);
+
+                   $estrellas[]=$estrella;
+               }
+               sort($estrellas);
+               sort($combito);
+               $cant=1;
+               $letras='numero';
+              foreach ($combito as $comb)
+              {
+                  $combo[$letras.$cant]=$comb;
+                  $cant++;
+              }
+              $cont=1;
+              $let='estrella';
+               foreach ($estrellas as $estri)
+               {
+                   $combo[$let.$cont]=$estri;
+                   $cont++;
+               }
+
+           }
+           while(!self::iguales($combo));
+
+          array_push($ramdoms,$combo);
+//          print_r($ramdoms);
+//          die;
+       }
+
+       return $ramdoms;
+
+   }
+
+    /**
+     * @param $combo
+     * @return bool
+     * funcion que  verifica si el combo elegido ha salido previamente
+     */
+   public function iguales($combo)
+   {
+       $pasados = lottery::all();
+
+        $i=0;
+       foreach ($pasados as $pasado)
+       {
+            if($combo['numero1']==$pasado['numero1'] && $combo['numero2']==$pasado['numero2'] && $combo['numero3']==$pasado['numero3']
+                && $combo['numero4']==$pasado['numero4']  && $combo['numero5']==$pasado['numero5'])
+            {
+                $i++;
+            }
+       }
+
+       return $i==0;
+   }
+
+    public function existe(Request $request) {
+         //return dd($request->all());
+        $combo=$request->all();
+       if(!self::iguales($combo))
+       {
+           return back()->with('notification','Ya existe esta combinación en el año');
+           die;
+       }
+       else
+       {
+           return back()->with('notification','Excelente combinación para este año');
+           die;
+       }
+
+    }
+
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * me va a devolver los 20 numeros que mas salen en la loteria del superonce
+     */
+    public function conteolaonce() {
+        $pasados = lottery::all();
+
+        $numeros=array('uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez',
+            'once','doce','trece','catorce','quince','dieciseis','diecisiete','dieciocho','diecinueve','veinte');
+        $numerosonce=array();
+        for ($i=1;$i<81;$i++)
+        {
+
+            $cont=0;
+            foreach ($pasados as $pasado)
+            {
+                foreach ($numeros as $numero) {
+                    if($pasado[$numero]==$i)
+                    {
+                        $numerosonce[$i]=$cont++;
+                        break;
+                    }
+                }
+
+            }
+
+        }
+
+        $estadistica=self::ordenar($numerosonce);
+        return view('superonce')->with(compact('estadistica'));
+    }
+
+    /**
+     * @param $numerosonce
+     * va devolver de mayor a menor los 20 numeros que mas se repiten
+     */
+    public function ordenar($numerosonce)
+    {
+
+
+    }
+
+
 }

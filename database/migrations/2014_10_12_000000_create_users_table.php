@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('last_name');
-            $table->string('nick');
-            $table->string('dni');
-            $table->bigInteger('phone_number');
+            $table->string('last_name')->default('');
+            $table->string('nick')->default('');
+            $table->string('dni')->default("");
+            $table->bigInteger('phone_number')->default(2453525);
             $table->string('email')->unique();
             $table->string('password');
             $table->smallInteger('role')->default(2); // 0:Admin | 1:Management | 2:Client

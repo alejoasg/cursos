@@ -120,7 +120,7 @@
 
                                                     <span class="icon-edit"></span>
                                                 </a>
-                                                <a href="{{route('editusuarios',$user['id'],'eliminar')}}"  class="btn btn-sm btn-primary" title="Dar de baja">
+                                                <a href="{{route('deleteusuarios',$user['id'],'eliminar')}}"  class="btn btn-sm btn-primary" title="Dar de baja">
 
                                                     <span class="icon-ei-trash"></span>
                                                 </a>
